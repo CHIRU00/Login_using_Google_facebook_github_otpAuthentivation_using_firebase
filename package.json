@@ -1,0 +1,30 @@
+{
+  "name": "remix-template-remix",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "remix build && npm run install:fonts",
+    "dev": "remix dev  && npm run install:fonts",
+    "start": "remix-serve build",
+    "postinstall": "remix setup node && mkdir -p public/build/_assets/themes/ && npm run install:fonts",
+    "install:fonts": "rsync -r app/styles/themes/ public/build/_assets/themes/"
+  },
+  "dependencies": {
+    "@remix-run/node": "^1.5.1",
+    "@remix-run/react": "^1.5.1",
+    "@remix-run/serve": "^1.5.1",
+    "firebase": "^9.8.2",
+    "firebase-admin": "^10.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "semantic-ui-css": "^2.4.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.5.1",
+    "@remix-run/eslint-config": "^1.5.1",
+    "eslint": "^8.15.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
